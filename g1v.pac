@@ -6,7 +6,7 @@ if (shExpMatch(host, "*.googleapis.com") ||
     shExpMatch(host, " na.b.g-tun.com")
    
    ) {
-return "PROXY http://192.168.0.3:7890";
+return "PROXY 192.168.0.3:7890";
 } else {
 return "DIRECT";
 }
