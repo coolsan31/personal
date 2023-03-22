@@ -1,6 +1,13 @@
 function FindProxyForURL(url, host) {
-if (host == "phosphor-pa.googleapis.com" || host == "prod.brass.cloud.cupronickel.goog") {
-return "SOCKS5 192.168.0.5:7890";
+if (shExpMatch(host, "*.googleapis.com") ||
+    shExpMatch(host, "*.goog")|| 
+    shExpMatch(host, "*.goog.*")|| 
+    shExpMatch(host, "*.google.*")||
+    shExpMatch(host, " na.b.g-tun.com")||
+    shExpMatch(host, " gstatic.com")
+   
+   ) {
+return "PROXY 192.168.0.5:7890";
 } else {
 return "DIRECT";
 }
